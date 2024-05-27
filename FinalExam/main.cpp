@@ -5,6 +5,7 @@
  */
 
 #include<iostream>
+#include<cassert>
 
 using namespace std;
 
@@ -38,6 +39,7 @@ int main () {
                 fillMatrix(mat, maxRow);
                 break;
             case 3:
+                cout << "\nSum of all positive numbers: " << sumPositive(mat, maxRow) << endl;
                 break;
             case 4:
                 break;
@@ -80,5 +82,25 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow) {
         }
     }
 }
+
+/**
+ * Returns the sum of all positive numbers in the matrix
+ * <BR>
+ * @param mat The matrix to be shown
+ * @param maxRow How many rows the matrix has
+ */
+double sumPositive(const double mat[][MAX_COL], const int maxRow) {
+   double sum = 0;
+    
+    for (int i = 0; i < maxRow; ++i) {
+        for (int j = 0; j < MAX_COL; ++j) {
+            if (mat[i][j] > 0) {
+                sum += mat[i][j];
+            }
+        }
+    }
+    return sum;
+}
+                                                            
 
 
