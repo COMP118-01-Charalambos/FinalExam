@@ -42,6 +42,7 @@ int main () {
                 cout << "\nSum of all positive numbers: " << sumPositive(mat, maxRow) << endl;
                 break;
             case 4:
+                cout << "\nGoodbye :)" << endl;
                 break;
         }
     } while(choice != 4);
@@ -56,6 +57,7 @@ int main () {
  * @param maxRow How many rows the matrix has
  */
 void printMatrix(const double mat[][MAX_COL], const int maxRow) {
+    assert(maxRow > 0);
     
     cout <<"\nContent of the matrix: ";
     for (int i = 0; i < maxRow; ++i) {
@@ -74,6 +76,7 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
  @param maxRow How many rows the matrix has
  */
 void fillMatrix(double mat[][MAX_COL], const int maxRow) {
+    assert(maxRow > 0);
     
     for (int i = 0; i < maxRow; ++i) {
         for (int j = 0; j < MAX_COL; ++j) {
@@ -90,6 +93,7 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow) {
  * @param maxRow How many rows the matrix has
  */
 double sumPositive(const double mat[][MAX_COL], const int maxRow) {
+    assert(maxRow > 0);
    double sum = 0;
     
     for (int i = 0; i < maxRow; ++i) {
