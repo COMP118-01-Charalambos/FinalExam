@@ -9,9 +9,6 @@
 using namespace std;
 
 const int MAX_COL = 5;
-const int MAX_ROW = 2;
-int mat[MAX_COL][MAX_ROW];
-int choice;
 
 //prototypes
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
@@ -21,6 +18,10 @@ double sumPositive(const double mat[][MAX_COL], const int maxRow);
 
 int main () {
   
+    const int MAX_ROW = 2;
+    double mat[MAX_ROW][MAX_COL];
+    int choice, maxRow = 2;
+
     do {
         cout << "\n1) Show data in matrix";
         cout << "\n2) Enter data in matrix (range -0.5 to 4.5)";
@@ -31,8 +32,10 @@ int main () {
         
         switch(choice) {
             case 1:
+                printMatrix(mat, maxRow);
                 break;
             case 2:
+                fillMatrix(mat, maxRow);
                 break;
             case 3:
                 break;
@@ -61,6 +64,21 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
         }
     }
 }
+  
+/**
+ fills the content of the matrix with user input
+ <BR>
+ @param mat The matrix to be shown
+ @param maxRow How many rows the matrix has
+ */
+void fillMatrix(double mat[][MAX_COL], const int maxRow) {
     
+    for (int i = 0; i < maxRow; ++i) {
+        for (int j = 0; j < MAX_COL; ++j) {
+            cout << "Enter value for R" << i << ") " << "C" << j << ") " << ": ";
+            cin >> mat[i][j];
+        }
+    }
+}
 
 
