@@ -15,7 +15,7 @@ const int MAX_COL = 5;
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
 void fillMatrix(double mat[][MAX_COL], const int maxRow);
 double sumPositive(const double mat[][MAX_COL], const int maxRow);
-
+int matCounter(const double mat[][MAX_COL], const int maxRow);
 
 int main () {
   
@@ -27,7 +27,8 @@ int main () {
         cout << "\n1) Show data in matrix";
         cout << "\n2) Enter data in matrix (range -0.5 to 4.5)";
         cout << "\n3) Sum of all positive numbers (i.e. values > 0)";
-        cout << "\n4) Exit";
+        cout << "\n4) Count the numbers of elements with the values 1.5";
+        cout << "\n5) Exit";
         cout << "\nPlease enter choice: ";
         cin >> choice;
         
@@ -42,6 +43,9 @@ int main () {
                 cout << "\nSum of all positive numbers: " << sumPositive(mat, maxRow) << endl;
                 break;
             case 4:
+                cout << "\nNumber of elements with the value 1.5: " << matCounter(mat, maxRow) << endl;
+                break;
+            case 5:
                 cout << "\nGoodbye :)" << endl;
                 break;
         }
@@ -106,5 +110,17 @@ double sumPositive(const double mat[][MAX_COL], const int maxRow) {
     return sum;
 }
                                                             
-
+int matCounter(const double mat[][MAX_COL], const int maxRow) {
+    assert(maxRow > 0);
+    int count = 0;
+    
+    for (int i = 0; i < maxRow; ++i) {
+        for (int j = 0; j < MAX_COL; ++j) {
+            if (mat[i][j] == 1.5) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
 
