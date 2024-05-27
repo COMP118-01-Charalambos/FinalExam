@@ -109,7 +109,12 @@ double sumPositive(const double mat[][MAX_COL], const int maxRow) {
     }
     return sum;
 }
-                                                            
+/**
+ * Returns the number of elements with the value 1.5
+ * <BR>
+ * @param mat The matrix to be shown
+ * @param maxRow How many rows the matrix has
+ */
 int matCounter(const double mat[][MAX_COL], const int maxRow) {
     assert(maxRow > 0);
     int count = 0;
